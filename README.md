@@ -13,6 +13,6 @@ this code aims to do the following:
 
 How To Use
 
-git clone https://github.com/lilliekhogg/clocoss-signoff1.git
-cd clocoss-signoff1
-bash task1.sh [No_Vms];
+1. git clone https://github.com/lilliekhogg/clocoss-signoff1.git
+2. cd clocoss-signoff1
+3. bash task1.sh [No_Vms];
