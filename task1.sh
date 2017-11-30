@@ -8,12 +8,12 @@ secretKey=`openssl rand -base64 32`;
 workerName="lillie-worker";
 
 
-//installing dependencies 
+#installing dependencies 
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash;
 sudo apt-get -q install nodejs;
 sudo apt-get -q install git;
 
-//clone master-worker github
+#clone master-worker github
 git clone https://github.com/portsoc/clocoss-master-worker;
 cd clocoss-master-worker;
 
@@ -21,7 +21,7 @@ npm install;
 
 gcloud config set compute/zone europe-west1-d;
 
-//create the instances
+#create the instances
 
 for i in `seq 1 $N`;
 do
@@ -34,11 +34,11 @@ do
         --quiet;
 done;
 
-//running server
+#running server
 npm run server $secretKey;
 
 
-//remove workers
+#remove workers
 cd..;
 sudo rm clocoss-master-worker -r;
 
