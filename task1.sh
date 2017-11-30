@@ -16,7 +16,6 @@ sudo apt-get -q install git;
 #clone master-worker github
 git clone https://github.com/portsoc/clocoss-master-worker;
 cd clocoss-master-worker;
-
 npm install;
 
 gcloud config set compute/zone europe-west1-d;
