@@ -2,6 +2,7 @@
 
 
 N=$1;
+echo "The number of vms created will be $N"
 
 secretKey=`openssl rand -base64 32`;
 workerName="lillie-worker";
@@ -18,6 +19,7 @@ cd clocoss-master-worker;
 
 npm install;
 
+gcloud config set compute/zone europe-west1-d;
 
 //create the instances
 
