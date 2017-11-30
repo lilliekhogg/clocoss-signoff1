@@ -14,7 +14,7 @@ git clone https://github.com/portsoc/clocoss-master-worker;
 cd clocoss-master-worker;
 npm install;
 
-
+//initialising the secret key
 secretKey=`curl -s -H "Metadata-Flavor: Google"  \
 "http://metadata.google.internal/computeMetadata/v1/instance/attributes/secret"`;
 serverip=`curl -s -H "Metadata-Flavor: Google"  \
