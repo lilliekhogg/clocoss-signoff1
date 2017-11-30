@@ -5,6 +5,7 @@ N=$1;
 echo "The number of vms created will be $N"
 
 secretKey=`openssl rand -base64 32`;
+echo "the secret key is $secretKey"
 workerName="lillie-worker";
 
 
