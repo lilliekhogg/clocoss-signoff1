@@ -1,6 +1,9 @@
 #!/bin/bash
 
-
+#installing dependencies 
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash;
+sudo apt-get -y install nodejs;
+sudo apt-get install git;
 
 #installing the clocoss-master-worker
 
