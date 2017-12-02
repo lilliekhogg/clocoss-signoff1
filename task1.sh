@@ -39,11 +39,3 @@ done;
 npm run server $secretKey;
 
 
-#remove workers
-cd..;
-sudo rm clocoss-master-worker -r;
-
-for i in `seq 1 $N`;
-do
-        gcloud compute instances delete "$workerName"-"$i" --quiet;
-done;
