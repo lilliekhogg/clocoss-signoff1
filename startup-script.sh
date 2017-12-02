@@ -14,9 +14,9 @@ npm install;
 
 #initialising the parameters
 secretKey=`curl -s -H "Metadata-Flavor: Google"  \
-"http://metadata.google.internal/computeMetadata/v1/instance/attributes/secret"`;
+              "http://metadata.google.internal/computeMetadata/v1/instance/attributes/secret"`;
 serverip=`curl -s -H "Metadata-Flavor: Google"  \
-"http://metadata.google.internal/computeMetadata/v1/instance/attributes/serverip"`;
+               "http://metadata.google.internal/computeMetadata/v1/instance/attributes/serverip"`;
 
 
 #run the client
