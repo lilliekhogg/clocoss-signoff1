@@ -9,7 +9,7 @@ echo "the secret key is $secretKey"
 workerName="lillie-worker";
 
 
-#installing dependencies 
+#installing dependencies
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash;
 sudo apt-get -y install nodejs;
 sudo apt-get install git;
@@ -30,7 +30,9 @@ do
         --tags http-server,https-server \
         --metadata secret=$secretKey,serverip=`curl -s -H "Metadata-Flavor: Google" \
                                                "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip"` \
-        --metadata-from-file startup-script=/home/up718528/clocoss-signoff1/startup-script.sh
+        --metadata-from-file \
+        startup-script=../startup-script.sh \
+        --quiet;
 done;
 
 #running server
