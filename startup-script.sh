@@ -1,5 +1,6 @@
 #!/bin/bash
-
+logfile=$$.log;
+exec > $logfile;
 
 #installing dependencies 
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash;
