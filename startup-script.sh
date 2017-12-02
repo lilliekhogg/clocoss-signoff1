@@ -1,6 +1,5 @@
 #!/bin/bash
-logfile=$$.log;
-exec > $logfile;
+
 
 #installing dependencies 
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash;
@@ -15,7 +14,7 @@ npm install;
 
 #initialising the parameters
 secretKey=`curl -s -H "Metadata-Flavor: Google"  \
-"http://metadata.google.internal/computeMetadata/v1/instance/attributes/secretKey"`;
+"http://metadata.google.internal/computeMetadata/v1/instance/attributes/secret"`;
 serverip=`curl -s -H "Metadata-Flavor: Google"  \
 "http://metadata.google.internal/computeMetadata/v1/instance/attributes/serverip"`;
 
