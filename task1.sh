@@ -32,7 +32,7 @@ do
         --tags http-server,https-server \
         --metadata secret=$secretKey,ip=$serverIP \
         --metadata-from-file \
-                startup-script=../startup-script.sh
+        startup-script=../startup-script.sh
 done;
 
 #running server
