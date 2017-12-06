@@ -7,6 +7,10 @@ secretKey=`openssl rand -base64 32`;
 echo "the secret key is $secretKey";
 workerName="lillie-worker";
 
+#establish server metadata
+serverIP=`curl -s -H "Metadata-Flavor: Google" \
+                                               "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip"` \
+
 
 #installing dependencies
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash;
@@ -18,10 +22,11 @@ git clone https://github.com/portsoc/clocoss-master-worker;
 cd clocoss-master-worker;
 npm install;
 
+#set the computezone for Vm instances
 gcloud config set compute/zone europe-west1-b;
 
-serverIP=`curl -s -H "Metadata-Flavor: Google" \
-                                               "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip"` \
+
+
 #create the instances
 
 for i in `seq 1 $N`;
