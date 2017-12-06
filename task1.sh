@@ -32,15 +32,14 @@ do
         --tags http-server,https-server \
         --metadata secret=$secretKey,ip=$serverIP \
         --metadata-from-file \
-                startup-script=../startup-script.sh \
-        --quiet;
+                startup-script=../startup-script.sh
 done;
 
 #running server
 npm run server $secretKey;
 
 #remove workers
-cd..;
+cd ..;
 sudo rm clocoss-master-worker -r;
 
 for i in `seq 1 $N`;
