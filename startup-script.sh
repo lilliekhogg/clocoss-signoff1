@@ -3,8 +3,8 @@
 
 #installing dependencies
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash;
-sudo apt-get -y install nodejs;
-sudo apt-get install git;
+sudo apt-get install -y nodejs;
+sudo apt-get install -y git;
 
 #installing the clocoss-master-worker
 
@@ -16,7 +16,7 @@ npm install;
 secretKey=`curl -s -H "Metadata-Flavor: Google"  \
               "http://metadata.google.internal/computeMetadata/v1/instance/attributes/secret"`;
 serverip=`curl -s -H "Metadata-Flavor: Google"  \
-               "http://metadata.google.internal/computeMetadata/v1/instance/attributes/serverip"`;
+               "http://metadata.google.internal/computeMetadata/v1/instance/attributes/ip"`;
 
 
 #run the client
