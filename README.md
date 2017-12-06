@@ -8,9 +8,11 @@ Script for executing signoff 1 for clocoss coursework by up718528.
 - Install the server and its dependancies
 - create N number of Vms
 - once the Vms have been created they will do the following:
-  a. download and install the client software 
-  b. run the client using serverip and secretKey
-  c. shut down when the client exits
+
+- download and install the client software 
+- run the client using serverip and secretKey
+- shut down when the client exits
+
 - The VM will carry out 100 tasks
 - Once the 100 tasks have been completed, the system will
   i. Delete client run Vms
