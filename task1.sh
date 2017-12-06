@@ -21,7 +21,7 @@ npm install;
 
 gcloud config set compute/zone europe-west1-b;
 
-serverip=`curl -s -H "Metadata-Flavor: Google" \
+serverIP=`curl -s -H "Metadata-Flavor: Google" \
                                                "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip"` \
 #create the instances
 
@@ -30,7 +30,7 @@ do
         gcloud compute instances create "$workerName"-"$i" \
         --machine-type f1-micro \
         --tags http-server,https-server \
-        --metadata secret=$secretKey,ip=$serverip \
+        --metadata secret=$secretKey,ip=$serverIP \
         --metadata-from-file \
                 startup-script=../startup-script.sh \
         --quiet;
