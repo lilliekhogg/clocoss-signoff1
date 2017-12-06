@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 N=$1;
 echo "The number of vms created will be $N";
 
