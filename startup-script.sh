@@ -20,4 +20,4 @@ serverip=`curl -s -H "Metadata-Flavor: Google"  \
 
 
 #run the client
-npm run client $secretKey; $serverip:8080;
+npm run client $secretKey $serverip:8080;
