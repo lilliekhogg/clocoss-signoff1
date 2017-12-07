@@ -11,13 +11,14 @@ workerName="lillie-worker";
 serverIP=`curl -s -H "Metadata-Flavor: Google" \
                                                "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip"` \
 
-
 #installing dependencies
+echo "Now installing dependencies";
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash;
 sudo apt-get -qq install nodejs;
 sudo apt-get -qq install git;
 
 #clone master-worker github
+echo "Cloning clocoss-master-worker";
 git clone https://github.com/portsoc/clocoss-master-worker;
 cd clocoss-master-worker;
 npm install;
@@ -50,3 +51,5 @@ for i in `seq 1 $N`;
 do
         gcloud compute instances delete "$workerName"-"$i";
 done;
+echo "servers successfully deleted";
+
